@@ -8,6 +8,7 @@ define( [ 'readium_js_plugins', 'jquery' ], function ( Plugins, $ ) {
 
     function doCustomizations() {
         hideReadiumAboutButton();
+        restyleNavbar();
     }
 
     function hideReadiumAboutButton() {
@@ -21,5 +22,20 @@ define( [ 'readium_js_plugins', 'jquery' ], function ( Plugins, $ ) {
         $readiumAboutButton.css( { visibility : 'hidden' } );
     }
 
+    function restyleNavbar() {
+        var $navbar = $( '.navbar' );
+
+        $navbar.css(
+            {
+                'background'    : '#2c2c2c',
+                'box-shadow'    : '0px 1px 5px #333',
+                'border-radius' : '0px',
+                'min-height'    : '50px',
+                'margin-bottom' : '0px'
+            }
+        )
+
+    }
 } );
+
 
