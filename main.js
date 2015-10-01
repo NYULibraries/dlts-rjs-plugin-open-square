@@ -1,4 +1,4 @@
-define( [ 'readium_js_plugins', 'jquery' ], function ( Plugins, $ ) {
+define( [ 'readium_js_plugins', 'jquery', './DltsEpubReader' ], function ( Plugins, $, DltsEpubReader ) {
 
     Plugins.register( 'dltsRjsPluginOaBooks', function ( api ) {
 
