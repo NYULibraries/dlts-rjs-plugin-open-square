@@ -1,8 +1,10 @@
 define( [ 'readium_js_plugins', 'jquery', './DltsEpubReader' ], function ( Plugins, $, DltsEpubReader ) {
 
-    Plugins.register( 'dltsRjsPluginOaBooks', function ( api ) {
+    Plugins.register(
+        'dltsRjsPluginOaBooks',
+        function ( api ) {
 
-        doCustomizations();
+            doCustomizations();
 
     } );
 
