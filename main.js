@@ -6,7 +6,14 @@ define( [ 'readium_js_plugins', 'jquery', './DltsEpubReader' ], function ( Plugi
 
             doCustomizations();
 
-    } );
+            api.reader.on(
+                ReadiumSDK.Events.CONTENT_DOCUMENT_LOADED,
+                function ( $iframe, spineItem ) {
+                    hideNavbarUnlessHoverOver( api, $iframe, DltsEpubReader );
+                }
+            );
+        }
+    );
 
     function doCustomizations() {
         hideReadiumAboutButton();
@@ -38,6 +45,26 @@ define( [ 'readium_js_plugins', 'jquery', './DltsEpubReader' ], function ( Plugi
         )
 
     }
+
+    function hideNavbarUnlessHoverOver( api, $iframe, DltsEpubReader ) {
+        var reader         = api.reader,
+            $window        = $( window ),
+            $contentWindow = $( $iframe[ 0 ].contentWindow );
+
+        $window.off( 'mousemove' );
+        // No API call on EpubReader to remove this listener, though there is
+        // an API for adding on, which we use later.
+        $contentWindow.off( 'mousemove' );
+
+        $window.on( 'mousemove', function() {
+            DltsEpubReader.hideLoop( null, true );
+        });
+        reader.addIFrameEventListener('mousemove', function() {
+            DltsEpubReader.hideLoop( null, true );
+        });
+    }
+
 } );
+
 
 
