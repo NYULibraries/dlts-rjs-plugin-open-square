@@ -61,9 +61,16 @@ define( [ 'readium_js_plugins', 'jquery', './DltsEpubReader' ], function ( Plugi
         // uses to add mousemove event handler to window.  The crucial difference
         // is that we pass in true for the `immediate` param, so that hideLoop
         // knows not to show the UI for 4 seconds before hiding goes into effect.
-        $window.on( 'mousemove', function() {
-            DltsEpubReader.hideLoop( null, true );
-        });
+        // But: we do want the initial wait period on initial load so the user
+        // knows there's a navbar there at all.  We use 5 seconds instead of 4.
+        setTimeout(
+            function() {
+                $window.on( 'mousemove', function() {
+                    DltsEpubReader.hideLoop( null, true );
+                } );
+            },
+            5000
+        );
 
         // The commented-out code below mirrors EpubReader.initReadium's adding
         // of event handling to the iframe.  For some reason the handler never
