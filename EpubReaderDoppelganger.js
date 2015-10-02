@@ -59,9 +59,6 @@ define(
         // style changes and slight modifications.
         EpubReaderDoppelganger.hideLoop = function ( e, immediate ) {
 
-            // if (!embedded){
-            //     return;
-            // }
             if ( this.hideTimeoutId ) {
                 window.clearTimeout( this.hideTimeoutId );
                 this.hideTimeoutId = null;
