@@ -30,26 +30,28 @@ define(
         // Copied from readium-js-viewer/src/js/EpubReader.js hideUI(), with
         // style changes and slight modifications.
         EpubReaderDoppelganger.hideUI = function () {
+            var navBar       = document.getElementById( "app-navbar" ),
+                $navBar      = $( navBar ),
+                $pageButtons = $( '#readium-page-btns' ),
+                within, isMouseOver;
+
             this.hideTimeoutId = null;
 
             // TODO: What is the Readium rationale for this condition below?
             // Readium dev team's code comment:
             // "don't hide it toolbar while toc open in non-embedded mode"
-            if ( !this.embedded && $( '#app-container' ).hasClass( 'toc-visible' ) ) {
+            if ( ! this.embedded && $( '#app-container' ).hasClass( 'toc-visible' ) ) {
                 return;
             }
 
-            var navBar = document.getElementById( "app-navbar" );
             if ( document.activeElement ) {
-                var within = jQuery.contains( navBar, document.activeElement );
+                within = jQuery.contains( navBar, document.activeElement );
                 if ( within ) return;
             }
 
-            var $navBar      = $( navBar ),
-                $pageButtons = $( '#readium-page-btns' );
             // Readium dev team code comment states that $navBar.is(':hover') is
             // broken.
-            var isMouseOver = (
+            isMouseOver = (
                 $navBar.find( ':hover' ).length > 0 ||
                 $pageButtons.find( ':hover' ).length > 0
             );
