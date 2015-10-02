@@ -78,13 +78,15 @@ define(
                 window.clearTimeout( this.hideTimeoutId );
                 this.hideTimeoutId = null;
             }
-            if ( !$( '#app-container' ).hasClass( 'toc-visible' ) && $( document.body ).hasClass( 'hide-ui' ) ) {
+
+            if ( ! $( '#app-container' ).hasClass( 'toc-visible' ) &&
+                   $( document.body ).hasClass( 'hide-ui' ) ) {
                 $( document.body ).removeClass( 'hide-ui' );
             }
+
             if ( immediate ) {
                 this.hideUI();
-            }
-            else {
+            } else {
                 this.hideTimeoutId = window.setTimeout( hideUI, 4000 );
             }
         }
