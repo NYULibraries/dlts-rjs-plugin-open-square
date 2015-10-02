@@ -36,9 +36,13 @@ define( [ 'jquery' ], function ( $ ) {
             if (within) return;
         }
 
-        var $navBar = $(navBar);
+        var $navBar      = $(navBar ),
+            $pageButtons = $( '#readium-page-btns' );
         // BROEKN! $navBar.is(':hover')
-        var isMouseOver = $navBar.find(':hover').length > 0;
+        var isMouseOver = (
+            $navBar.find(':hover').length > 0 ||
+            $pageButtons.find(':hover' ).length > 0
+        );
         if (isMouseOver) return;
 
         if ($('#audioplayer').hasClass('expanded-audio')) return;
