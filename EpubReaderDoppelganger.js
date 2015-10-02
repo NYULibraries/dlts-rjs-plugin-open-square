@@ -22,10 +22,13 @@ define( [ 'jquery' ], function ( $ ) {
     };
 
     // Copied from readium-js-viewer/src/js/EpubReader.js hideUI(), with
-    // slight modifications.
+    // style changes and slight modifications.
     EpubReaderDoppelganger.hideUI = function(){
         this.hideTimeoutId = null;
-        // don't hide it toolbar while toc open in non-embedded mode
+
+        // TODO: What is the Readium rationale for this condition below?
+        // Readium dev team's code comment:
+        // "don't hide it toolbar while toc open in non-embedded mode"
         if (!this.embedded && $('#app-container').hasClass('toc-visible')){
             return;
         }
@@ -38,7 +41,8 @@ define( [ 'jquery' ], function ( $ ) {
 
         var $navBar      = $(navBar ),
             $pageButtons = $( '#readium-page-btns' );
-        // BROEKN! $navBar.is(':hover')
+        // Readium dev team code comment states that $navBar.is(':hover') is
+        // broken.
         var isMouseOver = (
             $navBar.find(':hover').length > 0 ||
             $pageButtons.find(':hover' ).length > 0
@@ -51,7 +55,7 @@ define( [ 'jquery' ], function ( $ ) {
     }
 
     // Copied from readium-js-viewer/src/js/EpubReader.js hideLoop(), with
-    // slight modifications.
+    // style changes and slight modifications.
     EpubReaderDoppelganger.hideLoop = function(e, immediate){
 
         // if (!embedded){
