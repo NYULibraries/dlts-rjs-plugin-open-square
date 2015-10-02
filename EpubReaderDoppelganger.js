@@ -16,7 +16,7 @@
 
 define( [ 'jquery' ], function ( $ ) {
 
-    EpubReaderDoppelganger = {
+    var EpubReaderDoppelganger = {
         embedded      : true,
         hideTimeoutId : undefined
     };
