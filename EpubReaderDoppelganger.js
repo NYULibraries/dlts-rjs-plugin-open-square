@@ -58,6 +58,7 @@ define(
                 $pageButtons.find( ':hover' ).length > 0
             );
 
+            // If user is hovering over a UI element, don't hide
             if ( isMouseOver ) {
                 return;
             }
