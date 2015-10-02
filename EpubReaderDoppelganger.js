@@ -46,7 +46,9 @@ define(
 
             if ( document.activeElement ) {
                 within = jQuery.contains( navBar, document.activeElement );
-                if ( within ) return;
+                if ( within ) {
+                    return;
+                }
             }
 
             // Readium dev team code comment states that $navBar.is(':hover') is
@@ -55,9 +57,14 @@ define(
                 $navBar.find( ':hover' ).length > 0 ||
                 $pageButtons.find( ':hover' ).length > 0
             );
-            if ( isMouseOver ) return;
 
-            if ( $( '#audioplayer' ).hasClass( 'expanded-audio' ) ) return;
+            if ( isMouseOver ) {
+                return;
+            }
+
+            if ( $( '#audioplayer' ).hasClass( 'expanded-audio' ) ) {
+                return;
+            }
 
             $( document.body ).addClass( 'hide-ui' );
         }
