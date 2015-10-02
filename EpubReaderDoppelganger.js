@@ -8,11 +8,16 @@
 // modified behavior.
 
 // For now, when copying over a method from the original file, we keep the code
-// as close to the original as possible, including comment typos, coding style
-// and formatting inconsistent with ours, etc.  In theory this might make it
-// easier to do future modifications when Readium code updates and breaks our
-// plugin.  The code similarity might not be worth it in the end, though.  We'll
-// see.
+// as close to the original as possible in terms of intent and behavior. In theory
+// this might make it easier to do future modifications when Readium code updates and breaks
+// our plugin.
+// Possible exceptions:
+// * Fix blatant typos in comments
+// * Fix anything that doesn't pass our lint standards
+// * Use our code style for the project
+
+// The code similarity provided by this doppelganger approach might not be worth
+// it in the end, though.  We'll see.
 
 define(
     ['jquery'], function ( $ ) {
