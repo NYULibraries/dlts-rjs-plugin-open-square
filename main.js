@@ -1,4 +1,4 @@
-define( [ 'readium_js_plugins', 'jquery', './DltsEpubReader' ], function ( Plugins, $, DltsEpubReader ) {
+define( [ 'readium_js_plugins', 'jquery', './EpubReaderDoppelganger' ], function ( Plugins, $, EpubReaderDoppelganger ) {
 
     Plugins.register(
         'dltsRjsPluginOaBooks',
@@ -9,7 +9,7 @@ define( [ 'readium_js_plugins', 'jquery', './DltsEpubReader' ], function ( Plugi
             api.reader.on(
                 ReadiumSDK.Events.CONTENT_DOCUMENT_LOADED,
                 function ( $iframe, spineItem ) {
-                    hideNavbarUnlessHoverOver( $iframe, DltsEpubReader );
+                    hideNavbarUnlessHoverOver( $iframe, EpubReaderDoppelganger );
                 }
             );
         }
@@ -46,7 +46,7 @@ define( [ 'readium_js_plugins', 'jquery', './DltsEpubReader' ], function ( Plugi
 
     }
 
-    function hideNavbarUnlessHoverOver( $iframe, DltsEpubReader ) {
+    function hideNavbarUnlessHoverOver( $iframe, EpubReaderDoppelganger ) {
         var $window        = $( window ),
             $iframeContentWindow = $( $iframe[ 0 ].contentWindow );
 
@@ -66,7 +66,7 @@ define( [ 'readium_js_plugins', 'jquery', './DltsEpubReader' ], function ( Plugi
         setTimeout(
             function() {
                 $window.on( 'mousemove', function() {
-                    DltsEpubReader.hideLoop( null, true );
+                    EpubReaderDoppelganger.hideLoop( null, true );
                 } );
             },
             5000
