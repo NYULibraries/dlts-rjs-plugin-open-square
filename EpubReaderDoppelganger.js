@@ -16,14 +16,14 @@
 
 define( [ 'jquery' ], function ( $ ) {
 
-    DltsEpubReader = {
+    EpubReaderDoppelganger = {
         embedded      : true,
         hideTimeoutId : undefined
     };
 
     // Copied from readium-js-viewer/src/js/EpubReader.js hideUI(), with
     // slight modifications.
-    DltsEpubReader.hideUI = function(){
+    EpubReaderDoppelganger.hideUI = function(){
         this.hideTimeoutId = null;
         // don't hide it toolbar while toc open in non-embedded mode
         if (!this.embedded && $('#app-container').hasClass('toc-visible')){
@@ -48,7 +48,7 @@ define( [ 'jquery' ], function ( $ ) {
 
     // Copied from readium-js-viewer/src/js/EpubReader.js hideLoop(), with
     // slight modifications.
-    DltsEpubReader.hideLoop = function(e, immediate){
+    EpubReaderDoppelganger.hideLoop = function(e, immediate){
 
         // if (!embedded){
         //     return;
@@ -68,5 +68,5 @@ define( [ 'jquery' ], function ( $ ) {
         }
     }
 
-    return DltsEpubReader;
+    return EpubReaderDoppelganger;
 });
