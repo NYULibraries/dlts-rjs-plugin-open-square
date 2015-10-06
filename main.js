@@ -34,7 +34,9 @@ define(
         }
 
         function restyleNavbar() {
-            var $navbar = $( '.navbar' );
+            var $navbar       = $( '.navbar' ),
+                $navbarRight  = $( '.navbar-right' ),
+                $navbarButton = $( '.navbar .btn' );
 
             $navbar.css(
                 {
@@ -44,7 +46,28 @@ define(
                     'min-height'    : '50px',
                     'margin-bottom' : '0px'
                 }
-            )
+            );
+
+            $navbarRight.css(
+                {
+                    'overflow'         : 'visible',
+                    'height'           : '0.4em',
+                    'min-height'       : '50px',
+                    'background-color' : '#2c2c2c'
+                }
+            );
+            $navbarRight[ 0 ].style.setProperty( 'margin', '10px 15px 0 0', 'important' );
+
+            $navbarButton.css(
+                {
+                    'color'            : '#666',
+                    'font-size'        : '22px',
+                    'width'            : '43px',
+                    'height'           : '36px',
+                    'background'       : 'no-repeat center center',
+                    'background-color' : '#2c2c2c'
+                }
+            );
 
         }
 
