@@ -140,7 +140,7 @@ define(
             var $fullScreenButton = $( '.navbar .btn-group > .btn.icon-full-screen' );
 
             // ReadiumJS viewer adds a `display: none` for max-width:768px
-            // Undo this.  Currently
+            // Undo this.  Currently on a normal screen, display is "block"
             $fullScreenButton.css( 'display', 'block' );
         }
     }
