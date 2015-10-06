@@ -23,6 +23,10 @@ define(
         function doCustomizations() {
             hideReadiumAboutButton();
             restyleNavbar();
+
+            if ( viewportIsNarrow ) {
+                keepFullScreenButtonVisibleInNarrowViewport();
+            }
         }
 
         function hideReadiumAboutButton() {
@@ -132,6 +136,13 @@ define(
             //});
         }
 
+        function keepFullScreenButtonVisibleInNarrowViewport() {
+            var $fullScreenButton = $( '.navbar .btn-group > .btn.icon-full-screen' );
+
+            // ReadiumJS viewer adds a `display: none` for max-width:768px
+            // Undo this.  Currently
+            $fullScreenButton.css( 'display', 'block' );
+        }
     }
 );
 
