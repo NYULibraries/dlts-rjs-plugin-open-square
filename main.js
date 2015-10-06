@@ -49,12 +49,7 @@ define(
             );
 
             $navbarRight.css(
-                {
-                    'overflow'         : 'visible',
-                    'height'           : '0.4em',
-                    'min-height'       : '50px',
-                    'background-color' : '#2c2c2c'
-                }
+                getNavbarRightCss()
             );
 
             // ReadiumJS CSS currently has "margin-right: 0 !important;"
@@ -73,6 +68,24 @@ define(
                 }
             );
 
+        }
+
+        function getNavbarRightCss() {
+            var navbarRightCss =
+                {
+                    'overflow'         : 'visible',
+                    'height'           : '0.4em',
+                    'min-height'       : '50px',
+                    'background-color' : '#2c2c2c'
+                },
+                // WARNING: window.matchMedia() not supported on IE8 or lower
+                viewportIsNarrow = window.matchMedia( '(max-width:768px)' );
+
+            if ( viewportIsNarrow ) {
+                navbarRightCss.float = 'right';
+            }
+
+            return navbarRightCss;
         }
 
         function hideNavbarUnlessHoverOver( $iframe, EpubReaderDoppelganger ) {
