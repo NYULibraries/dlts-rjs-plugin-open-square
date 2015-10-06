@@ -78,6 +78,7 @@ define(
                     'min-height'       : '50px',
                     'background-color' : '#2c2c2c'
                 },
+                // WARNING: window.matchMedia() not supported on IE8 or lower
                 viewportIsNarrow = window.matchMedia( '(max-width:768px)' );
 
             if ( viewportIsNarrow ) {
