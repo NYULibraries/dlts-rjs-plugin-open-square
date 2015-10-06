@@ -2,6 +2,9 @@ define(
     [ 'readium_js_plugins', 'jquery', './EpubReaderDoppelganger' ],
     function ( Plugins, $, EpubReaderDoppelganger ) {
 
+        // WARNING: window.matchMedia() not supported on IE8 or lower
+        var viewportIsNarrow = window.matchMedia( '(max-width:768px)' );
+
         Plugins.register(
             'dltsRjsPluginOaBooks',
             function ( api ) {
@@ -77,9 +80,7 @@ define(
                     'height'           : '0.4em',
                     'min-height'       : '50px',
                     'background-color' : '#2c2c2c'
-                },
-                // WARNING: window.matchMedia() not supported on IE8 or lower
-                viewportIsNarrow = window.matchMedia( '(max-width:768px)' );
+                };
 
             if ( viewportIsNarrow ) {
                 navbarRightCss.float = 'right';
