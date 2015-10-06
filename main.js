@@ -56,6 +56,10 @@ define(
                     'background-color' : '#2c2c2c'
                 }
             );
+
+            // ReadiumJS CSS currently has "margin-right: 0 !important;"
+            // jQuery.css() can't do "!important"
+            // Solution: http://stackoverflow.com/questions/11962962/overriding-important-with-css-or-jquery
             $navbarRight[ 0 ].style.setProperty( 'margin', '10px 15px 0 0', 'important' );
 
             $navbarButton.css(
