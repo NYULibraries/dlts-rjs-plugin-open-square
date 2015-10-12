@@ -20,7 +20,7 @@
 // it in the end, though.  We'll see.
 
 define(
-    ['jquery'], function ( $ ) {
+    [ 'jquery' ], function ( $ ) {
 
         var EpubReaderDoppelganger = {
             embedded      : true,
