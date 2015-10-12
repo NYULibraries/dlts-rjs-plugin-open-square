@@ -68,7 +68,7 @@ define(
             }
 
             $( document.body ).addClass( 'hide-ui' );
-        }
+        };
 
         // Copied from readium-js-viewer/src/js/EpubReader.js hideLoop(), with
         // style changes and slight modifications.
