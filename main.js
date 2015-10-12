@@ -105,10 +105,16 @@ define(
         }
 
         function hideNavbarUnlessHoverOver( $iframe, EpubReaderDoppelganger ) {
-            var $window        = $( window ),
-                $iframeContentWindow = $( $iframe[ 0 ].contentWindow );
+            var $window              = $( window ),
+                $iframeContentWindow = $( $iframe[ 0 ].contentWindow ),
+                $navBar              = $( '#app-navbar' );
 
-            // First, we remove existing mousemove event handlers that were added
+            // First, we add a wrapper <div> element around #app-navbar so that
+            // we can detect :hover for entire surface of it as opposed to just
+            // elements contained with it, using jQuery.find( ':hover' )
+            $navBar.wrap( '<div id="app-navbar_hover-detection-wrapper"></div>' );
+
+            // Next, we remove existing mousemove event handlers that were added
             // by EpubReader
             $window.off( 'mousemove' );
             // No API call on EpubReader to remove this listener, though there is
