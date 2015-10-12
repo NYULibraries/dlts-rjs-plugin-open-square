@@ -30,9 +30,9 @@ define(
         // Copied from readium-js-viewer/src/js/EpubReader.js hideUI(), with
         // style changes and slight modifications.
         EpubReaderDoppelganger.hideUI = function () {
-            var navBar       = document.getElementById( "app-navbar" ),
-                $navBar      = $( navBar ),
-                $pageButtons = $( '#readium-page-btns' ),
+            var navBarWrapper  = document.getElementById( 'app-navbar_hover-detection-wrapper' ),
+                $navBarWrapper = $( navBarWrapper ),
+                $pageButtons   = $( '#readium-page-btns' ),
                 within, isMouseOver;
 
             this.hideTimeoutId = null;
@@ -45,7 +45,7 @@ define(
             }
 
             if ( document.activeElement ) {
-                within = jQuery.contains( navBar, document.activeElement );
+                within = jQuery.contains( navBarWrapper, document.activeElement );
                 if ( within ) {
                     return;
                 }
@@ -54,7 +54,7 @@ define(
             // Readium dev team code comment states that $navBar.is(':hover') is
             // broken.
             isMouseOver = (
-                $navBar.find( ':hover' ).length > 0 ||
+                $navBarWrapper.find( ':hover' ).length > 0 ||
                 $pageButtons.find( ':hover' ).length > 0
             );
 
