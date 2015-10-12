@@ -105,7 +105,7 @@ define(
         }
 
         function hideNavbarUnlessHoverOver( $iframe, EpubReaderDoppelganger ) {
-            var $window        = $( window ),
+            var $window              = $( window ),
                 $iframeContentWindow = $( $iframe[ 0 ].contentWindow );
 
             // First, we remove existing mousemove event handlers that were added
