@@ -42,7 +42,8 @@ define(
             // Readium dev team's code comment:
             // "don't hide it toolbar while toc open in non-embedded mode"
             if ( ! this.embedded &&
-                 $( ReadiumCss.Selectors.APP_CONTAINER ).hasClass( 'toc-visible' ) ) {
+                 $( ReadiumCss.Selectors.APP_CONTAINER ).hasClass(
+                     ReadiumCss.Classes.TOC_VISIBLE) ) {
                 return;
             }
 
@@ -83,7 +84,7 @@ define(
                 this.hideTimeoutId = null;
             }
 
-            if ( ! $( ReadiumCss.Selectors.APP_CONTAINER ).hasClass( 'toc-visible' ) &&
+            if ( ! $( ReadiumCss.Selectors.APP_CONTAINER ).hasClass( ReadiumCss.Classes.TOC_VISIBLE ) &&
                    $( document.body ).hasClass( ReadiumCss.Classes.HIDE_UI ) ) {
                 $( document.body ).removeClass( ReadiumCss.Classes.HIDE_UI );
             }

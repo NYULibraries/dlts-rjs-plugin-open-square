@@ -9,7 +9,8 @@ define(
 
         ReadiumCss.Classes = {
             'EXPANDED_AUDIO' : 'expanded-audio',
-            'HIDE_UI'        : 'hide-ui'
+            'HIDE_UI'        : 'hide-ui',
+            'TOC_VISIBLE'    : 'toc-visible'
         };
 
         ReadiumCss.Selectors = {
