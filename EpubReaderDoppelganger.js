@@ -31,7 +31,7 @@ define(
         // Copied from readium-js-viewer/src/js/EpubReader.js hideUI(), with
         // style changes and slight modifications.
         EpubReaderDoppelganger.hideUI = function () {
-            var $navBarWrapper = $( DltsCss.NAVBAR_HOVER_DETECTION_WRAPPER ),
+            var $navBarWrapper = $( DltsCss.selectors.NAVBAR_HOVER_DETECTION_WRAPPER ),
                 navBarWrapper  = $navBarWrapper[ 0 ],
                 $pageButtons   = $( ReadiumCss.PAGE_TURNER_BUTTONS ),
                 within, isMouseOver;
