@@ -23,6 +23,7 @@ define(
         function doCustomizations() {
             hideReadiumAboutButton();
             restyleNavbar();
+            moveReadingAreaClearOfNavbar();
 
             if ( viewportIsNarrow ) {
                 keepFullScreenButtonVisibleInNarrowViewport();
@@ -91,6 +92,16 @@ define(
             }
 
             return navbarRightCss;
+        }
+
+        function moveReadingAreaClearOfNavbar() {
+            var $readingArea = $( '#reading-area' );
+
+            $readingArea.css(
+                {
+                    'top' : '78px'
+                }
+            )
         }
 
         function hideNavbarUnlessHoverOver( $iframe, EpubReaderDoppelganger ) {
