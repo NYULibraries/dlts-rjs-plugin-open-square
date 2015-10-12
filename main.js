@@ -31,7 +31,7 @@ define(
         }
 
         function hideReadiumAboutButton() {
-            var $readiumAboutButton = $( ReadiumCss.ABOUT_BUTTON );
+            var $readiumAboutButton = $( ReadiumCss.Selectors.ABOUT_BUTTON );
 
             // Remove Readium logo
             // There are many buttons default .navbar-left that have visibility: hidden
@@ -42,9 +42,9 @@ define(
         }
 
         function restyleNavbar() {
-            var $navbar       = $( ReadiumCss.NAVBAR ),
-                $navbarRight  = $( ReadiumCss.NAVBAR_RIGHT ),
-                $navbarButton = $( ReadiumCss.NAVBAR_BUTTONS );
+            var $navbar       = $( ReadiumCss.Selectors.NAVBAR ),
+                $navbarRight  = $( ReadiumCss.Selectors.NAVBAR_RIGHT ),
+                $navbarButton = $( ReadiumCss.Selectors.NAVBAR_BUTTONS );
 
             $navbar.css(
                 {
@@ -95,7 +95,7 @@ define(
         }
 
         function moveReadingAreaClearOfNavbar() {
-            var $readingArea = $( ReadiumCss.READING_AREA );
+            var $readingArea = $( ReadiumCss.Selectors.READING_AREA );
 
             $readingArea.css(
                 {
@@ -154,7 +154,7 @@ define(
         }
 
         function keepFullScreenButtonVisibleInNarrowViewport() {
-            var $fullScreenButton = $( ReadiumCss.FULLSCREEN_BUTTON );
+            var $fullScreenButton = $( ReadiumCss.Selectors.FULLSCREEN_BUTTON );
 
             // ReadiumJS viewer adds a `display: none` for max-width:768px
             // Undo this.  Currently on a normal screen, display is "block"

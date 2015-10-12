@@ -5,7 +5,9 @@
 define(
     ['jquery'], function ( $ ) {
 
-        var ReadiumCss = {
+        var ReadiumCss = {};
+
+        ReadiumCss.Selectors = {
             'ABOUT_BUTTON'        : '#aboutButt1',
             'APP_CONTAINER'       : '#app-container',
             'AUDIO_PLAYER'        : '#audioplayer',
@@ -17,6 +19,7 @@ define(
             'READING_AREA'        : '#reading-area'
         };
 
+        Object.freeze( ReadiumCss.Selectors );
         Object.freeze( ReadiumCss );
 
         return ReadiumCss;

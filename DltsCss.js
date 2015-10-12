@@ -7,11 +7,11 @@ define(
 
         var DltsCss = {};
 
-        DltsCss.selectors = {
+        DltsCss.Selectors = {
             'NAVBAR_HOVER_DETECTION_WRAPPER' : '#app-navbar_hover-detection-wrapper'
         };
 
-        Object.freeze( DltsCss.selectors )
+        Object.freeze( DltsCss.Selectors )
         Object.freeze( DltsCss );
 
         return DltsCss;
