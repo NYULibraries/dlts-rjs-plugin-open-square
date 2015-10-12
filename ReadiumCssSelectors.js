@@ -1,5 +1,5 @@
 /**
- * @file CSS selector used by ReadiumJS viewer
+ * @file CSS selectors used in ReadiumJS project(s) core code
  */
 
 define(
