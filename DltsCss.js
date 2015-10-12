@@ -5,12 +5,12 @@
 define(
     ['jquery'], function ( $ ) {
 
-        var DltsCssSelectors = {
+        var DltsCss = {
             'NAVBAR_HOVER_DETECTION_WRAPPER' : '#app-navbar_hover-detection-wrapper'
         };
 
-        Object.freeze( DltsCssSelectors );
+        Object.freeze( DltsCss );
 
-        return DltsCssSelectors;
+        return DltsCss;
     }
 );

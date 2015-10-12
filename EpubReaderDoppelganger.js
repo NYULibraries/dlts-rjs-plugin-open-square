@@ -20,8 +20,8 @@
 // it in the end, though.  We'll see.
 
 define(
-    [ 'jquery', './ReadiumCssSelectors', './DltsCssSelectors' ],
-    function ( $, ReadiumCssSelectors, DltsCssSelectors ) {
+    [ 'jquery', './ReadiumCss', './DltsCss' ],
+    function ( $, ReadiumCss, DltsCss ) {
 
         var EpubReaderDoppelganger = {
             embedded      : true,
@@ -31,9 +31,9 @@ define(
         // Copied from readium-js-viewer/src/js/EpubReader.js hideUI(), with
         // style changes and slight modifications.
         EpubReaderDoppelganger.hideUI = function () {
-            var $navBarWrapper = $( DltsCssSelectors.NAVBAR_HOVER_DETECTION_WRAPPER ),
+            var $navBarWrapper = $( DltsCss.NAVBAR_HOVER_DETECTION_WRAPPER ),
                 navBarWrapper  = $navBarWrapper[ 0 ],
-                $pageButtons   = $( ReadiumCssSelectors.PAGE_TURNER_BUTTONS ),
+                $pageButtons   = $( ReadiumCss.PAGE_TURNER_BUTTONS ),
                 within, isMouseOver;
 
             this.hideTimeoutId = null;
@@ -42,7 +42,7 @@ define(
             // Readium dev team's code comment:
             // "don't hide it toolbar while toc open in non-embedded mode"
             if ( ! this.embedded &&
-                 $( ReadiumCssSelectors.APP_CONTAINER ).hasClass( 'toc-visible' ) ) {
+                 $( ReadiumCss.APP_CONTAINER ).hasClass( 'toc-visible' ) ) {
                 return;
             }
 
@@ -65,7 +65,7 @@ define(
                 return;
             }
 
-            if ( $( ReadiumCssSelectors.AUDIO_PLAYER ).hasClass( 'expanded-audio' ) ) {
+            if ( $( ReadiumCss.AUDIO_PLAYER ).hasClass( 'expanded-audio' ) ) {
                 return;
             }
 
@@ -81,7 +81,7 @@ define(
                 this.hideTimeoutId = null;
             }
 
-            if ( ! $( ReadiumCssSelectors.APP_CONTAINER ).hasClass( 'toc-visible' ) &&
+            if ( ! $( ReadiumCss.APP_CONTAINER ).hasClass( 'toc-visible' ) &&
                    $( document.body ).hasClass( 'hide-ui' ) ) {
                 $( document.body ).removeClass( 'hide-ui' );
             }

@@ -1,6 +1,6 @@
 define(
-    [ 'readium_js_plugins', 'jquery', './EpubReaderDoppelganger', './ReadiumCssSelectors' ],
-    function ( Plugins, $, EpubReaderDoppelganger, ReadiumCssSelectors ) {
+    [ 'readium_js_plugins', 'jquery', './EpubReaderDoppelganger', './ReadiumCss' ],
+    function ( Plugins, $, EpubReaderDoppelganger, ReadiumCss ) {
 
         // WARNING: window.matchMedia() not supported on IE8 or lower
         var viewportIsNarrow = window.matchMedia( '(max-width:768px)' );
@@ -31,7 +31,7 @@ define(
         }
 
         function hideReadiumAboutButton() {
-            var $readiumAboutButton = $( ReadiumCssSelectors.ABOUT_BUTTON );
+            var $readiumAboutButton = $( ReadiumCss.ABOUT_BUTTON );
 
             // Remove Readium logo
             // There are many buttons default .navbar-left that have visibility: hidden
@@ -42,9 +42,9 @@ define(
         }
 
         function restyleNavbar() {
-            var $navbar       = $( ReadiumCssSelectors.NAVBAR ),
-                $navbarRight  = $( ReadiumCssSelectors.NAVBAR_RIGHT ),
-                $navbarButton = $( ReadiumCssSelectors.NAVBAR_BUTTONS );
+            var $navbar       = $( ReadiumCss.NAVBAR ),
+                $navbarRight  = $( ReadiumCss.NAVBAR_RIGHT ),
+                $navbarButton = $( ReadiumCss.NAVBAR_BUTTONS );
 
             $navbar.css(
                 {
@@ -95,7 +95,7 @@ define(
         }
 
         function moveReadingAreaClearOfNavbar() {
-            var $readingArea = $( ReadiumCssSelectors.READING_AREA );
+            var $readingArea = $( ReadiumCss.READING_AREA );
 
             $readingArea.css(
                 {
@@ -154,7 +154,7 @@ define(
         }
 
         function keepFullScreenButtonVisibleInNarrowViewport() {
-            var $fullScreenButton = $( ReadiumCssSelectors.FULLSCREEN_BUTTON );
+            var $fullScreenButton = $( ReadiumCss.FULLSCREEN_BUTTON );
 
             // ReadiumJS viewer adds a `display: none` for max-width:768px
             // Undo this.  Currently on a normal screen, display is "block"
