@@ -65,7 +65,9 @@ define(
                 return;
             }
 
-            if ( $( ReadiumCss.Selectors.AUDIO_PLAYER ).hasClass( 'expanded-audio' ) ) {
+            if ( $( ReadiumCss.Selectors.AUDIO_PLAYER ).hasClass(
+                    ReadiumCss.Classes.EXPANDED_AUDIO
+                ) ) {
                 return;
             }
 

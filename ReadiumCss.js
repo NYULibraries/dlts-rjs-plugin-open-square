@@ -8,7 +8,8 @@ define(
         var ReadiumCss = {};
 
         ReadiumCss.Classes = {
-            'HIDE_UI' : 'hide-ui'
+            'EXPANDED_AUDIO' : 'expanded-audio',
+            'HIDE_UI'        : 'hide-ui'
         };
 
         ReadiumCss.Selectors = {
