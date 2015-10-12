@@ -20,7 +20,8 @@
 // it in the end, though.  We'll see.
 
 define(
-    [ 'jquery', './ReadiumCssSelectors' ], function ( $, ReadiumCssSelectors ) {
+    [ 'jquery', './ReadiumCssSelectors', './DltsCssSelectors' ],
+    function ( $, ReadiumCssSelectors, DltsCssSelectors ) {
 
         var EpubReaderDoppelganger = {
             embedded      : true,
@@ -30,8 +31,8 @@ define(
         // Copied from readium-js-viewer/src/js/EpubReader.js hideUI(), with
         // style changes and slight modifications.
         EpubReaderDoppelganger.hideUI = function () {
-            var navBarWrapper  = document.getElementById( 'app-navbar_hover-detection-wrapper' ),
-                $navBarWrapper = $( navBarWrapper ),
+            var $navBarWrapper = $( DltsCssSelectors.NAVBAR_HOVER_DETECTION_WRAPPER ),
+                navBarWrapper  = $navBarWrapper[ 0 ],
                 $pageButtons   = $( ReadiumCssSelectors.PAGE_TURNER_BUTTONS ),
                 within, isMouseOver;
 
