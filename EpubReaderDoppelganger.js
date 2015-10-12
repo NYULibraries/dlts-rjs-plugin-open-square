@@ -89,7 +89,7 @@ define(
             } else {
                 this.hideTimeoutId = window.setTimeout( hideUI, 4000 );
             }
-        }
+        };
 
         return EpubReaderDoppelganger;
     }
