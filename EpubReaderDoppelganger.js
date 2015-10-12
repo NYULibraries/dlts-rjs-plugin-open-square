@@ -69,7 +69,7 @@ define(
                 return;
             }
 
-            $( document.body ).addClass( 'hide-ui' );
+            $( document.body ).addClass( ReadiumCss.Classes.HIDE_UI );
         };
 
         // Copied from readium-js-viewer/src/js/EpubReader.js hideLoop(), with
@@ -82,8 +82,8 @@ define(
             }
 
             if ( ! $( ReadiumCss.Selectors.APP_CONTAINER ).hasClass( 'toc-visible' ) &&
-                   $( document.body ).hasClass( 'hide-ui' ) ) {
-                $( document.body ).removeClass( 'hide-ui' );
+                   $( document.body ).hasClass( ReadiumCss.Classes.HIDE_UI ) ) {
+                $( document.body ).removeClass( ReadiumCss.Classes.HIDE_UI );
             }
 
             if ( immediate ) {

@@ -7,6 +7,10 @@ define(
 
         var ReadiumCss = {};
 
+        ReadiumCss.Classes = {
+            'HIDE_UI' : 'hide-ui'
+        };
+
         ReadiumCss.Selectors = {
             'ABOUT_BUTTON'        : '#aboutButt1',
             'APP_CONTAINER'       : '#app-container',
@@ -19,6 +23,7 @@ define(
             'READING_AREA'        : '#reading-area'
         };
 
+        Object.freeze( ReadiumCss.Classes );
         Object.freeze( ReadiumCss.Selectors );
         Object.freeze( ReadiumCss );
 
