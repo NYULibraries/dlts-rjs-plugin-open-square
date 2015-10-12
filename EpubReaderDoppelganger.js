@@ -20,7 +20,7 @@
 // it in the end, though.  We'll see.
 
 define(
-    [ 'jquery' ], function ( $ ) {
+    [ 'jquery', './ReadiumCssSelectors' ], function ( $, ReadiumCssSelectors ) {
 
         var EpubReaderDoppelganger = {
             embedded      : true,
@@ -32,7 +32,7 @@ define(
         EpubReaderDoppelganger.hideUI = function () {
             var navBarWrapper  = document.getElementById( 'app-navbar_hover-detection-wrapper' ),
                 $navBarWrapper = $( navBarWrapper ),
-                $pageButtons   = $( '#readium-page-btns' ),
+                $pageButtons   = $( ReadiumCssSelectors.PAGE_TURNER_BUTTONS ),
                 within, isMouseOver;
 
             this.hideTimeoutId = null;
@@ -40,7 +40,8 @@ define(
             // TODO: What is the Readium rationale for this condition below?
             // Readium dev team's code comment:
             // "don't hide it toolbar while toc open in non-embedded mode"
-            if ( ! this.embedded && $( '#app-container' ).hasClass( 'toc-visible' ) ) {
+            if ( ! this.embedded &&
+                 $( ReadiumCssSelectors.APP_CONTAINER ).hasClass( 'toc-visible' ) ) {
                 return;
             }
 
@@ -63,7 +64,7 @@ define(
                 return;
             }
 
-            if ( $( '#audioplayer' ).hasClass( 'expanded-audio' ) ) {
+            if ( $( ReadiumCssSelectors.AUDIO_PLAYER ).hasClass( 'expanded-audio' ) ) {
                 return;
             }
 
@@ -79,7 +80,7 @@ define(
                 this.hideTimeoutId = null;
             }
 
-            if ( ! $( '#app-container' ).hasClass( 'toc-visible' ) &&
+            if ( ! $( ReadiumCssSelectors.APP_CONTAINER ).hasClass( 'toc-visible' ) &&
                    $( document.body ).hasClass( 'hide-ui' ) ) {
                 $( document.body ).removeClass( 'hide-ui' );
             }
