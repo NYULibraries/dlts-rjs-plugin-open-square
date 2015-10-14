@@ -162,6 +162,8 @@ define(
             $fullScreenButton.css( 'display', 'block' );
         }
 
+        // This prevents book covers from being split into two columns:
+        // https://www.pivotaltracker.com/n/projects/1355218/stories/105150522
         function setBookCoverSvgPositionToAbsolute( $iframe ) {
             var iframeDocument = $iframe.contents()[ 0],
                 svgElement     = iframeDocument.getElementsByTagName( 'svg' )[ 0 ],
