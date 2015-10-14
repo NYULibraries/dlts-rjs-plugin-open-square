@@ -15,6 +15,7 @@ define(
                     ReadiumSDK.Events.CONTENT_DOCUMENT_LOADED,
                     function ( $iframe, spineItem ) {
                         hideNavbarUnlessHoverOver( $iframe, EpubReaderDoppelganger );
+                        setBookCoverSvgPositionToAbsolute( $iframe );
                     }
                 );
             }
@@ -159,6 +160,18 @@ define(
             // ReadiumJS viewer adds a `display: none` for max-width:768px
             // Undo this.  Currently on a normal screen, display is "block"
             $fullScreenButton.css( 'display', 'block' );
+        }
+
+        function setBookCoverSvgPositionToAbsolute( $iframe ) {
+            var iframeDocument = $iframe.contents()[ 0],
+                svgElement     = iframeDocument.getElementsByTagName( 'svg' )[ 0 ],
+                $svg           = $( svgElement );
+
+            $svg.css(
+                {
+                    'position' : 'absolute'
+                }
+            )
         }
     }
 );
