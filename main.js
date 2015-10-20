@@ -166,7 +166,7 @@ define(
         // https://www.pivotaltracker.com/n/projects/1355218/stories/105150522
         function setBookCoverSvgPositionToAbsolute( $iframe ) {
             var iframeDocument = $iframe.contents()[ 0],
-                svgElement     = iframeDocument.getElementsByTagName( 'svg' )[ 0 ],
+                svgElement     = iframeDocument.querySelector( 'svg' ),
                 $svg           = $( svgElement );
 
             $svg.css(
