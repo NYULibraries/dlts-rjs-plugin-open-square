@@ -18,6 +18,7 @@ define(
             'APP_CONTAINER'       : '#app-container',
             'AUDIO_PLAYER'        : '#audioplayer',
             'FULLSCREEN_BUTTON'   : '.navbar .btn-group > .btn.icon-full-screen',
+            'LIBRARY_BUTTON'      : '.icon-library',
             'NAVBAR'              : '.navbar',
             'NAVBAR_RIGHT'        : '.navbar-right',
             'NAVBAR_BUTTONS'      : '.navbar .btn',
