@@ -16,6 +16,7 @@ define(
         ReadiumCss.Selectors = {
             'ABOUT_BUTTON'        : '#aboutButt1',
             'APP_CONTAINER'       : '#app-container',
+            'AUDIO_BUTTON'        : '#backgroundAudioTrack-div',
             'AUDIO_PLAYER'        : '#audioplayer',
             'FULLSCREEN_BUTTON'   : '.navbar .btn-group > .btn.icon-full-screen',
             'LIBRARY_BUTTON'      : '.icon-library',
