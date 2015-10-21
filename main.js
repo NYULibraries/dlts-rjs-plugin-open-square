@@ -26,10 +26,6 @@ define(
             hideLibraryButton();
             restyleNavbar();
             moveReadingAreaClearOfNavbar();
-
-            if ( viewportIsNarrow ) {
-                keepFullScreenButtonVisibleInNarrowViewport();
-            }
         }
 
         function hideReadiumAboutButton() {
@@ -164,14 +160,6 @@ define(
             //reader.addIFrameEventListener('mousemove', function() {
             //    DltsEpubReader.hideLoop( null, true );
             //});
-        }
-
-        function keepFullScreenButtonVisibleInNarrowViewport() {
-            var $fullScreenButton = $( ReadiumCss.Selectors.FULLSCREEN_BUTTON );
-
-            // ReadiumJS viewer adds a `display: none` for max-width:768px
-            // Undo this.  Currently on a normal screen, display is "block"
-            $fullScreenButton.css( 'display', 'block' );
         }
 
         // This prevents book covers from being split into two columns:
