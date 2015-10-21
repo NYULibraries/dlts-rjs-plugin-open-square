@@ -23,6 +23,7 @@ define(
 
         function doCustomizations() {
             hideReadiumAboutButton();
+            hideAudioButtonSooner();
             hideLibraryButton();
             restyleNavbar();
             moveReadingAreaClearOfNavbar();
@@ -37,6 +38,19 @@ define(
             // TODO: figure out if can eliminate the flicker.  Not sure if we can
             // because we can't force this to be called any earlier.
             $readiumAboutButton.css( { visibility : 'hidden' } );
+        }
+
+        function hideAudioButtonSooner() {
+            var $audioButton = $( ReadiumCss.Selectors.AUDIO_BUTTON );
+
+            // Hide Audio button from the navbar sooner than it is already being
+            // hidden by Readium.  It's just too clearly visible for too long
+            // before it blinks out of existence.
+            // There are many buttons default .navbar-left that have visibility: hidden
+            // Following the same pattern.
+            // TODO: figure out if can eliminate the flicker.  Not sure if we can
+            // because we can't force this to be called any earlier.
+            $audioButton.css( { visibility : 'hidden' } );
         }
 
         function hideLibraryButton() {
