@@ -15,7 +15,7 @@ define(
             'NAVBAR_HOVER_DETECTION_WRAPPER' : '#' + DltsCss.Ids.NAVBAR_HOVER_DETECTION_WRAPPER
         };
 
-        Object.freeze( DltsCss.Selectors )
+        Object.freeze( DltsCss.Selectors );
         Object.freeze( DltsCss );
 
         return DltsCss;
