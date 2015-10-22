@@ -1,6 +1,10 @@
 define(
-    [ 'readium_js_plugins', 'jquery', './EpubReaderDoppelganger', './ReadiumCss' ],
-    function ( Plugins, $, EpubReaderDoppelganger, ReadiumCss ) {
+    [ 'readium_js_plugins',
+      'jquery',
+      './EpubReaderDoppelganger',
+      './ReadiumCss',
+      './DltsCss' ],
+    function ( Plugins, $, EpubReaderDoppelganger, ReadiumCss, DltsCss ) {
 
         // WARNING: window.matchMedia() not supported on IE8 or lower
         var viewportIsNarrow = window.matchMedia( '(max-width:768px)' );
@@ -135,7 +139,9 @@ define(
             // First, we add a wrapper <div> element around #app-navbar so that
             // we can detect :hover for entire surface of it as opposed to just
             // elements contained with it, using jQuery.find( ':hover' )
-            $navBar.wrap( '<div id="app-navbar_hover-detection-wrapper"></div>' );
+            $navBar.wrap( '<div id="'                                   +
+                          DltsCss.Ids.NAVBAR_HOVER_DETECTION_WRAPPER +
+                          '"></div>' );
 
             // Next, we remove existing mousemove event handlers that were added
             // by EpubReader
