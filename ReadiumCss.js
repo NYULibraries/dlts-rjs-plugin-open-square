@@ -18,6 +18,7 @@ define(
             'APP_CONTAINER'         : '#app-container',
             'AUDIO_BUTTON'          : '#backgroundAudioTrack-div',
             'AUDIO_PLAYER'          : '#audioplayer',
+            // From ReadiumViewer.js, which has in variable tooltipSelector
             'BUTTONS_WITH_TOOLTIPS' : 'nav *[title]',
             'FULLSCREEN_BUTTON'     : '.navbar .btn-group > .btn.icon-full-screen',
             'LIBRARY_BUTTON'        : '.icon-library',
