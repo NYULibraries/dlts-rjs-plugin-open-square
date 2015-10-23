@@ -3,8 +3,9 @@ define(
       'jquery',
       './EpubReaderDoppelganger',
       './ReadiumCss',
-      './DltsCss' ],
-    function ( Plugins, $, EpubReaderDoppelganger, ReadiumCss, DltsCss ) {
+      './DltsCss',
+      './Util' ],
+    function ( Plugins, $, EpubReaderDoppelganger, ReadiumCss, DltsCss, Util ) {
 
         // WARNING: window.matchMedia() not supported on IE8 or lower
         var viewportIsNarrow = window.matchMedia( '(max-width:768px)' );
