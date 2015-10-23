@@ -8,13 +8,18 @@ define(
     function ( Plugins, $, EpubReaderDoppelganger, ReadiumCss, DltsCss, Util ) {
 
         // WARNING: window.matchMedia() not supported on IE8 or lower
-        var viewportIsNarrow = window.matchMedia( '(max-width:768px)' );
+        var isTouchDevice    = Util.isTouchDevice(),
+            viewportIsNarrow = window.matchMedia( '(max-width:768px)' );
 
         Plugins.register(
             'dltsRjsPluginOaBooks',
             function ( api ) {
 
                 doCustomizations();
+
+                if ( isTouchDevice ) {
+                    doMobileCustomizations();
+                }
 
                 api.reader.on(
                     ReadiumSDK.Events.CONTENT_DOCUMENT_LOADED,
@@ -32,6 +37,13 @@ define(
             hideLibraryButton();
             restyleNavbar();
             moveReadingAreaClearOfNavbar();
+        }
+
+        function doMobileCustomizations() {
+            // Remove tooltips.  On touchscreens tooltips just force users to
+            // have to click twice: once for the tooltip, again to fire the event
+            // tied to the click.
+            $( ReadiumCss.Selectors.BUTTONS_WITH_TOOLTIPS ).removeAttr( 'title' );
         }
 
         function hideReadiumAboutButton() {
