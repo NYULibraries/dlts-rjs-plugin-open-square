@@ -32,9 +32,17 @@ define(
         );
 
         function doCustomizations() {
+            // Note for element hiding customizations:
+            // There are many buttons in .navbar-left that by default
+            // have visibility: hidden rather than display : none
+            // We are following that pattern.
+            // TODO: figure out if can eliminate the flicker.  Not sure if we can
+            // because we can't force these hide functions to be called any
+            // earlier.
             hideReadiumAboutButton();
             hideAudioButtonSooner();
             hideLibraryButton();
+
             restyleNavbar();
             moveReadingAreaClearOfNavbar();
         }
@@ -49,11 +57,6 @@ define(
         function hideReadiumAboutButton() {
             var $readiumAboutButton = $( ReadiumCss.Selectors.ABOUT_BUTTON );
 
-            // Remove Readium logo
-            // There are many buttons default .navbar-left that have visibility: hidden
-            // Following the same pattern.
-            // TODO: figure out if can eliminate the flicker.  Not sure if we can
-            // because we can't force this to be called any earlier.
             $readiumAboutButton.css( { visibility : 'hidden' } );
         }
 
@@ -62,22 +65,12 @@ define(
 
             // Hide Audio button from the navbar sooner than it is already being
             // hidden by Readium.  It's just too clearly visible for too long
-            // before it blinks out of existence.
-            // There are many buttons default .navbar-left that have visibility: hidden
-            // Following the same pattern.
-            // TODO: figure out if can eliminate the flicker.  Not sure if we can
-            // because we can't force this to be called any earlier.
             $audioButton.css( { visibility : 'hidden' } );
         }
 
         function hideLibraryButton() {
             var $libraryButton = $( ReadiumCss.Selectors.LIBRARY_BUTTON );
 
-            // Remove Library button
-            // There are many buttons default .navbar-left that have visibility: hidden
-            // Following the same pattern.
-            // TODO: figure out if can eliminate the flicker.  Not sure if we can
-            // because we can't force this to be called any earlier.
             $libraryButton.css( { visibility : 'hidden' } );
         }
 
