@@ -1,13 +1,13 @@
-ReadiumJS plugin for NYU Open Access Books (OA Books)
-=====================================================
+ReadiumJS plugin for [NYU Press Open Access Books (OA Books)](http://openaccessbooks.nyupress.org/)
+=============================================================
 
-# Required ReadiumJS Viewer version
+## Required ReadiumJS Viewer version
 
 This plugin was built against this ReadiumJS Viewer master branch commit:
 
 [c94d4c16f35839812ceb50f9ae7d485b105057ce](https://github.com/readium/readium-js-viewer/commit/c94d4c16f35839812ceb50f9ae7d485b105057ce)
 
-# INSTALLATION
+## INSTALLATION
 
 1) Clone repo into existing instance.  In `readium-js-viewer/readium-js/readium-shared-js/plugins/`:
 
@@ -16,8 +16,11 @@ git clone git@github.com:NYULibraries/dlta-rjs-plugin-oa-books.git dltsRjsPlugin
 ```
 
 Note that "dlts-rjs-plugin-oa-books" breaks the build, so plugin registration at
-the moment uses camel-case convention.
-(TODO: Find out what the plugin naming rules are)
+the moment uses camel-case convention.  There is an open issue for this:
+[
+   plugins: name with dash / stroke char breaks build? · Issue #241 · readium/readium-shared-js
+](https://github.com/readium/readium-shared-js/issues/241)
+
 
 2) Create/modify `readium-js-viewer/readium-js/readium-shared-js/plugins/plugins-override.cson`.  Basic example where this plugin is the only one enabled:
 
