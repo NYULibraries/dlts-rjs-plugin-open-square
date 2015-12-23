@@ -31,8 +31,8 @@ plugins:
 ```
 
 This file is permanently ignored by ReadiumJS project.  For more details, see:
-* [readium-shared-js/PLUGINS.md](https://github.com/readium/readium-shared-js)
-* [readium/readium-js-viewer/README.md: Plugins integration](https://github.com/readium)
+* [readium-shared-js/PLUGINS.md](https://github.com/readium/readium-shared-js/blob/master/PLUGINS.md)
+* [readium/readium-js-viewer/README.md: Plugins integration](https://github.com/readium/readium-js-viewer/blob/master/README.md)
 
 3) In `readium-js-viewer/`, run `npm run build`.
 
