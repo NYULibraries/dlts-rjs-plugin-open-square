@@ -1,13 +1,13 @@
 ReadiumJS plugin for [NYU Press Open Access Books (OA Books)](http://openaccessbooks.nyupress.org/)
 =============================================================
 
-# Required ReadiumJS Viewer version
+## Required ReadiumJS Viewer version
 
 This plugin was built against this ReadiumJS Viewer master branch commit:
 
 [c94d4c16f35839812ceb50f9ae7d485b105057ce](https://github.com/readium/readium-js-viewer/commit/c94d4c16f35839812ceb50f9ae7d485b105057ce)
 
-# INSTALLATION
+## INSTALLATION
 
 1) Clone repo into existing instance.  In `readium-js-viewer/readium-js/readium-shared-js/plugins/`:
 
