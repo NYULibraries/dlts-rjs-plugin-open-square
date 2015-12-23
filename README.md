@@ -16,8 +16,11 @@ git clone git@github.com:NYULibraries/dlta-rjs-plugin-oa-books.git dltsRjsPlugin
 ```
 
 Note that "dlts-rjs-plugin-oa-books" breaks the build, so plugin registration at
-the moment uses camel-case convention.
-(TODO: Find out what the plugin naming rules are)
+the moment uses camel-case convention.  There is an open issue for this:
+[
+   plugins: name with dash / stroke char breaks build? · Issue #241 · readium/readium-shared-js
+](https://github.com/readium/readium-shared-js/issues/241)
+
 
 2) Create/modify `readium-js-viewer/readium-js/readium-shared-js/plugins/plugins-override.cson`.  Basic example where this plugin is the only one enabled:
 
