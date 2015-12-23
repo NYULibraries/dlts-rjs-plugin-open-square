@@ -1,5 +1,5 @@
-ReadiumJS plugin for NYU Open Access Books (OA Books)
-=====================================================
+ReadiumJS plugin for [NYU Press Open Access Books (OA Books)](http://openaccessbooks.nyupress.org/)
+=============================================================
 
 # Required ReadiumJS Viewer version
 
