@@ -8,16 +8,15 @@ define(
         var ReadiumCss = {};
 
         ReadiumCss.Classes = {
-            'EXPANDED_AUDIO' : 'expanded-audio',
-            'HIDE_UI'        : 'hide-ui',
-            'TOC_VISIBLE'    : 'toc-visible'
+            // Individual CSS class names.
+            // Used to have stuff related to UI visibility toggling.
+            // Keep this around to remind us that this set could be useful
+            // later.
         };
 
         ReadiumCss.Selectors = {
             'ABOUT_BUTTON'          : '#aboutButt1',
-            'APP_CONTAINER'         : '#app-container',
             'AUDIO_BUTTON'          : '#backgroundAudioTrack-div',
-            'AUDIO_PLAYER'          : '#audioplayer',
             // From ReadiumViewer.js, which has in variable tooltipSelector
             'BUTTONS_WITH_TOOLTIPS' : 'nav *[title]',
             'FULLSCREEN_BUTTON'     : '.navbar .btn-group > .btn.icon-full-screen',
@@ -25,7 +24,6 @@ define(
             'NAVBAR'                : '.navbar',
             'NAVBAR_RIGHT'          : '.navbar-right',
             'NAVBAR_BUTTONS'        : '.navbar .btn',
-            'PAGE_TURNER_BUTTONS'   : '#readium-page-btns',
             'READING_AREA'          : '#reading-area'
         };
 
