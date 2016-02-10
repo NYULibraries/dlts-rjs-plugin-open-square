@@ -19,7 +19,6 @@ define(
             'AUDIO_BUTTON'          : '#backgroundAudioTrack-div',
             // From ReadiumViewer.js, which has in variable tooltipSelector
             'BUTTONS_WITH_TOOLTIPS' : 'nav *[title]',
-            'FULLSCREEN_BUTTON'     : '.navbar .btn-group > .btn.icon-full-screen',
             'LIBRARY_BUTTON'        : '.icon-library',
             'NAVBAR'                : '.navbar',
             'NAVBAR_RIGHT'          : '.navbar-right',
