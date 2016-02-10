@@ -5,7 +5,27 @@ ReadiumJS plugin for [NYU Press Open Access Books (OA Books)](http://openaccessb
 
 This plugin was built against this ReadiumJS Viewer master branch commit:
 
-[c94d4c16f35839812ceb50f9ae7d485b105057ce](https://github.com/readium/readium-js-viewer/commit/c94d4c16f35839812ceb50f9ae7d485b105057ce)
+[0375c9ad36ebc07b6ea074e78fbbe4bbf714b803](https://github.com/readium/readium-js-viewer/commit/0375c9ad36ebc07b6ea074e78fbbe4bbf714b803)
+
+...with a patch consisting of cherry-picked 3946d54c594b2a3a44564caa0478b64b375a9aaa applied against sub-module `readium-js/`, in order to get bugfix for embedding external videos:
+
+```bash
+$ git log -2
+commit 3946d54c594b2a3a44564caa0478b64b375a9aaa
+Author: danielweck <daniel.weck@gmail.com>
+Date:   Wed Dec 23 13:48:48 2015 +0000
+
+    fixes https://github.com/readium/readium-js-viewer/issues/447 support for iframes with
+    external HTTP(S) content, such as YouTube videos, etc. (this bug fix
+    actualy also "protects" Readium against crashes due to external iframe@src
+    references)
+
+commit 9c341d64a9c14f81952c6caf015453bbef65d303
+Author: danielweck <daniel.weck@gmail.com>
+Date:   Wed Jan 27 21:44:56 2016 +0000
+
+    version bump
+```
 
 ## INSTALLATION
 
