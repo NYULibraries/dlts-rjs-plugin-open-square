@@ -32,7 +32,7 @@ Date:   Wed Jan 27 21:44:56 2016 +0000
 1) Clone repo into existing instance.  In `readium-js-viewer/readium-js/readium-shared-js/plugins/`:
 
 ```Shell
-git clone git@github.com:NYULibraries/dlta-rjs-plugin-oa-books.git dltsRjsPluginOaBooks
+git clone git@github.com:NYULibraries/dlts-rjs-plugin-oa-books.git dltsRjsPluginOaBooks
 ```
 
 Note that "dlts-rjs-plugin-oa-books" breaks the build, so plugin registration at
