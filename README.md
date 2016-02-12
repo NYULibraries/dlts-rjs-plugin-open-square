@@ -29,9 +29,11 @@ Date:   Wed Jan 27 21:44:56 2016 +0000
 
 ## INSTALLATION
 
-1) Clone repo into existing instance.  In `readium-js-viewer/readium-js/readium-shared-js/plugins/`:
+1) Clone this repo into the `plugins/` directory of the ReadiumJS viewer instance:
 
 ```Shell
+# In root of ReadiumJS viewer instance
+cd readium-js/readium-shared-js/plugins/
 git clone git@github.com:NYULibraries/dlts-rjs-plugin-oa-books.git dltsRjsPluginOaBooks
 ```
 
@@ -42,7 +44,8 @@ the moment uses camel-case convention.  There is an open issue for this:
 ](https://github.com/readium/readium-shared-js/issues/241)
 
 
-2) Create/modify `readium-js-viewer/readium-js/readium-shared-js/plugins/plugins-override.cson`.  Basic example where this plugin is the only one enabled:
+2) Create the `plugins-override.cson` file in the `plugins/` directory (or modify it if it already exists).  The path inside ReadiumJS viewer: `readium-js/readium-shared-js/plugins/plugins-override.cson`.
+A basic example where this plugin is the only one enabled:
 
 ```
 plugins:
@@ -57,5 +60,5 @@ This file is permanently ignored by ReadiumJS project.  For more details, see:
 * [readium-shared-js/PLUGINS.md](https://github.com/readium/readium-shared-js/blob/master/PLUGINS.md)
 * [readium/readium-js-viewer/README.md: Plugins integration](https://github.com/readium/readium-js-viewer/blob/master/README.md)
 
-3) In `readium-js-viewer/`, run `npm run build`.
+3) In the root of ReadiumJS viewer insteance, run `npm run build`.
 
