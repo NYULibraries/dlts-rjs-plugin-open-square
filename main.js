@@ -136,6 +136,8 @@ define(
 
         // This prevents book covers from being split into two columns:
         // https://www.pivotaltracker.com/n/projects/1355218/stories/105150522
+        // NOte that this only seems to work for books in OA Books collection,
+        // not for books in Connected Youth: https://jira.nyu.edu/browse/NYUP-132
         function setBookCoverSvgPositionToAbsolute( $iframe ) {
             var iframeDocument = $iframe.contents()[ 0],
                 svgElement     = iframeDocument.querySelector( 'svg' ),
