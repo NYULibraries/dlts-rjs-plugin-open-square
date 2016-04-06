@@ -22,7 +22,7 @@ define(
                 api.reader.on(
                     ReadiumSDK.Events.CONTENT_DOCUMENT_LOADED,
                     function ( $iframe, spineItem ) {
-                        setBookCoverSvgPositionToAbsolute( $iframe );
+                        fixSplitCoverImages( $iframe );
                     }
                 );
             }
@@ -132,6 +132,10 @@ define(
                     'top' : '78px'
                 }
             )
+        }
+
+        function fixSplitCoverImages( $iframe ) {
+            setBookCoverSvgPositionToAbsolute( $iframe );
         }
 
         // This prevents book covers from being split into two columns:
