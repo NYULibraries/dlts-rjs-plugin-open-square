@@ -156,6 +156,9 @@ define(
             )
         }
 
+        // Note that this only seems to fix split cover bug in Connected Youth collection,
+        // not for books in OA Books: https://jira.nyu.edu/browse/NYUP-132.
+        // OA Books books do not use SVG elements.
         function setBookCoverImgHeight( $iframe ) {
             var iframeDocument = $iframe.contents()[ 0],
                 imgElement     = iframeDocument.querySelector( '.cover img' ),
