@@ -7,7 +7,8 @@ This plugin was built against this ReadiumJS Viewer master branch commit:
 
 [0375c9ad36ebc07b6ea074e78fbbe4bbf714b803](https://github.com/readium/readium-js-viewer/commit/0375c9ad36ebc07b6ea074e78fbbe4bbf714b803)
 
-...with a patch consisting of cherry-picked 3946d54c594b2a3a44564caa0478b64b375a9aaa applied against sub-module `readium-js/`, in order to get bugfix for embedding external videos:
+...with a patch consisting of cherry-picked 3946d54c594b2a3a44564caa0478b64b375a9aaa
+applied against sub-module `readium-js/`, in order to get bugfix for embedding external videos:
 
 ```bash
 $ git log -2
