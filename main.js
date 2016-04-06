@@ -140,7 +140,7 @@ define(
             setBookCoverSvgPositionToAbsolute( $iframe );
         }
 
-        // NOte that this only seems to work for books in OA Books collection,
+        // Note that this only seems to work for books in OA Books collection,
         // not for books in Connected Youth: https://jira.nyu.edu/browse/NYUP-132
         function setBookCoverSvgPositionToAbsolute( $iframe ) {
             var iframeDocument = $iframe.contents()[ 0],
