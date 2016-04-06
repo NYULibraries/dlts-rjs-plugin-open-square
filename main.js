@@ -138,10 +138,12 @@ define(
         // https://www.pivotaltracker.com/n/projects/1355218/stories/105150522
         function fixSplitCoverImages( $iframe ) {
             setBookCoverSvgPositionToAbsolute( $iframe );
+            setBookCoverImgHeight( $iframe );
         }
 
         // Note that this only seems to work for books in OA Books collection,
-        // not for books in Connected Youth: https://jira.nyu.edu/browse/NYUP-132
+        // not for books in Connected Youth: https://jira.nyu.edu/browse/NYUP-132.
+        // Connected Youth books do not use SVG elements.
         function setBookCoverSvgPositionToAbsolute( $iframe ) {
             var iframeDocument = $iframe.contents()[ 0],
                 svgElement     = iframeDocument.querySelector( 'svg' ),
@@ -151,6 +153,19 @@ define(
                 {
                     'position' : 'absolute'
                 }
+            )
+        }
+
+        function setBookCoverImgHeight( $iframe ) {
+            var iframeDocument = $iframe.contents()[ 0],
+                imgElement     = iframeDocument.querySelector( '.cover img' ),
+                $img           = $( imgElement );
+
+            $img.css(
+                {
+                    'height'  : '93vh',
+                    'margin'  : 0,
+                    'padding' : 0                }
             )
         }
     }
