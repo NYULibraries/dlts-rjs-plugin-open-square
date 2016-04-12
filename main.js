@@ -22,6 +22,7 @@ define(
                 api.reader.on(
                     ReadiumSDK.Events.CONTENT_DOCUMENT_LOADED,
                     function ( $iframe, spineItem ) {
+                        fixSplitImages( $iframe );
                         fixSplitCoverImages( $iframe );
                     }
                 );
@@ -170,6 +171,25 @@ define(
                     'margin'  : 0,
                     'padding' : 0                }
             )
+        }
+
+        // This prevents images from being split into two columns:
+        // https://jira.nyu.edu/browse/NYUP-157
+        function fixSplitImages( $iframe ) {
+            var $images = $iframe.contents().find( 'img' );
+
+            $images.each(
+                function() {
+                    $( this ).css(
+                        {
+                            'max-width'  : '98%',
+                            'max-height' : '95vh',
+                            'width'      : 'auto',
+                            'height'     : 'auto'
+                        }
+                    );
+                }
+            );
         }
     }
 );
