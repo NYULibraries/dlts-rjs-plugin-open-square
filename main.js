@@ -22,6 +22,7 @@ define(
                 api.reader.on(
                     ReadiumSDK.Events.CONTENT_DOCUMENT_LOADED,
                     function ( $iframe, spineItem ) {
+                        fixSplitImages( $iframe );
                         fixSplitCoverImages( $iframe );
                     }
                 );
@@ -145,7 +146,7 @@ define(
         // not for books in Connected Youth: https://jira.nyu.edu/browse/NYUP-132.
         // Connected Youth books do not use SVG elements.
         function setBookCoverSvgPositionToAbsolute( $iframe ) {
-            var iframeDocument = $iframe.contents()[ 0],
+            var iframeDocument = $iframe.contents()[ 0 ],
                 svgElement     = iframeDocument.querySelector( 'svg' ),
                 $svg           = $( svgElement );
 
@@ -160,7 +161,7 @@ define(
         // not for books in OA Books: https://jira.nyu.edu/browse/NYUP-132.
         // OA Books books do not use SVG elements.
         function setBookCoverImgHeight( $iframe ) {
-            var iframeDocument = $iframe.contents()[ 0],
+            var iframeDocument = $iframe.contents()[ 0 ],
                 imgElement     = iframeDocument.querySelector( '.cover img' ),
                 $img           = $( imgElement );
 
@@ -170,6 +171,25 @@ define(
                     'margin'  : 0,
                     'padding' : 0                }
             )
+        }
+
+        // This prevents images from being split into two columns:
+        // https://jira.nyu.edu/browse/NYUP-157
+        function fixSplitImages( $iframe ) {
+            var $images = $iframe.contents().find( 'img' );
+
+            $images.each(
+                function() {
+                    $( this ).css(
+                        {
+                            'max-width'  : '98%',
+                            'max-height' : '95vh',
+                            'width'      : 'auto',
+                            'height'     : 'auto'
+                        }
+                    );
+                }
+            );
         }
     }
 );
