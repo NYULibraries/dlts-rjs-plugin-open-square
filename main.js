@@ -169,7 +169,8 @@ define(
                 {
                     'height'  : '93vh',
                     'margin'  : 0,
-                    'padding' : 0                }
+                    'padding' : 0
+                }
             )
         }
 
