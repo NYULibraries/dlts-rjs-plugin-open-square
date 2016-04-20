@@ -23,7 +23,6 @@ define(
                     ReadiumSDK.Events.CONTENT_DOCUMENT_LOADED,
                     function ( $iframe, spineItem ) {
                         fixSplitImages( $iframe );
-                        fixSplitCoverSvgImages( $iframe );
                     }
                 );
             }
@@ -135,9 +134,14 @@ define(
             )
         }
 
+        function fixSplitImages( $iframe ) {
+            fixSplitSvg( $iframe );
+            fixSplitImg( $iframe );
+        }
+
         // This prevents book covers that are <svg> from being split into two columns:
         // https://www.pivotaltracker.com/n/projects/1355218/stories/105150522
-        function fixSplitCoverSvgImages( $iframe ) {
+        function fixSplitSvg( $iframe ) {
             setBookCoverSvgPositionToAbsolute( $iframe );
         }
 
@@ -158,7 +162,7 @@ define(
 
         // This prevents images from being split into two columns:
         // https://jira.nyu.edu/browse/NYUP-157
-        function fixSplitImages( $iframe ) {
+        function fixSplitImg( $iframe ) {
             var $head = $iframe.contents().find( 'head' );
 
             $head.append(
