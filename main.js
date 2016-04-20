@@ -180,13 +180,13 @@ define(
             var $head = $iframe.contents().find( 'head' );
 
             $head.append(
-                '<style type="text/css">'       +
-                ' img[style]'                   +
-                ' { max-width: 98% !important;' +
-                ' max-height: 95vh !important;' +
-                ' width: auto !important;'      +
-                ' height: auto !important; }'   +
-                ' </style>'
+                '<style type="text/css">'        +
+                '  img[style]'                   +
+                '  { max-width: 98% !important;' +
+                '  max-height: 95vh !important;' +
+                '  width: auto !important;'      +
+                '  height: auto !important; }'   +
+                '</style>'
             );
         }
     }
