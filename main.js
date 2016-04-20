@@ -23,7 +23,7 @@ define(
                     ReadiumSDK.Events.CONTENT_DOCUMENT_LOADED,
                     function ( $iframe, spineItem ) {
                         fixSplitImages( $iframe );
-                        fixSplitCoverImages( $iframe );
+                        fixSplitCoverSvgImages( $iframe );
                     }
                 );
             }
@@ -135,11 +135,10 @@ define(
             )
         }
 
-        // This prevents book covers from being split into two columns:
+        // This prevents book covers that are <svg> from being split into two columns:
         // https://www.pivotaltracker.com/n/projects/1355218/stories/105150522
-        function fixSplitCoverImages( $iframe ) {
+        function fixSplitCoverSvgImages( $iframe ) {
             setBookCoverSvgPositionToAbsolute( $iframe );
-            setBookCoverImgHeight( $iframe );
         }
 
         // Note that this only seems to fix split cover bug in OA Books collection,
@@ -153,23 +152,6 @@ define(
             $svg.css(
                 {
                     'position' : 'absolute'
-                }
-            )
-        }
-
-        // Note that this only seems to fix split cover bug in Connected Youth collection,
-        // not for books in OA Books: https://jira.nyu.edu/browse/NYUP-132.
-        // OA Books book covers do not use <img> elements.
-        function setBookCoverImgHeight( $iframe ) {
-            var iframeDocument = $iframe.contents()[ 0 ],
-                imgElement     = iframeDocument.querySelector( '.cover img' ),
-                $img           = $( imgElement );
-
-            $img.css(
-                {
-                    'height'  : '93vh',
-                    'margin'  : 0,
-                    'padding' : 0
                 }
             )
         }
@@ -191,7 +173,10 @@ define(
                 '    height: auto !important;'     +
                 '  }'                              +
 
-                // Covers need special treatment
+                // Covers need special treatment.
+                // Note that this only seems to fix split cover bug in Connected Youth collection,
+                // not for books in OA Books: https://jira.nyu.edu/browse/NYUP-132.
+                // OA Books book covers do not use <img> elements.
                 '  img.cover, img.cover[style]'    +
                 '  {'                              +
                 '    max-width: 98% !important;'   +
