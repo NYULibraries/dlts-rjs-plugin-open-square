@@ -177,19 +177,16 @@ define(
         // This prevents images from being split into two columns:
         // https://jira.nyu.edu/browse/NYUP-157
         function fixSplitImages( $iframe ) {
-            var $images = $iframe.contents().find( 'img' );
+            var $head = $iframe.contents().find( 'head' );
 
-            $images.each(
-                function() {
-                    $( this ).css(
-                        {
-                            'max-width'  : '98%',
-                            'max-height' : '95vh',
-                            'width'      : 'auto',
-                            'height'     : 'auto'
-                        }
-                    );
-                }
+            $head.append(
+                '<style type="text/css">'       +
+                ' img[style]'                   +
+                ' { max-width: 98% !important;' +
+                ' max-height: 95vh !important;' +
+                ' width: auto !important;'      +
+                ' height: auto !important; }'   +
+                ' </style>'
             );
         }
     }
