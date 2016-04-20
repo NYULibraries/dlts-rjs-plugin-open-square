@@ -181,11 +181,21 @@ define(
 
             $head.append(
                 '<style type="text/css">'        +
+
+                // Fix all <img> elements
                 '  img[style]'                   +
                 '  { max-width: 98% !important;' +
                 '  max-height: 95vh !important;' +
                 '  width: auto !important;'      +
                 '  height: auto !important; }'   +
+
+                // Covers need special treatment
+                '  img.cover, img.cover[style]'  +
+                '  { max-width: 98% !important;' +
+                '  max-height: 93vh !important;' +
+                '  width: auto !important;'      +
+                '  height: 93vh !important; }'   +
+
                 '</style>'
             );
         }
