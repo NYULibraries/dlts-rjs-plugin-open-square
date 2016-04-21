@@ -181,7 +181,7 @@ define(
                 // Note that this only seems to fix split cover bug in Connected Youth collection,
                 // not for books in OA Books: https://jira.nyu.edu/browse/NYUP-132.
                 // OA Books book covers do not use <img> elements.
-                '  img.cover, img.cover[style]'    +
+                '  .cover img, .cover img[style]'  +
                 '  {'                              +
                 '    max-width: 98% !important;'   +
                 '    max-height: 93vh !important;' +
