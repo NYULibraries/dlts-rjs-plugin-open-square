@@ -7,7 +7,7 @@ This plugin was built against this ReadiumJS Viewer master branch commit:
 
 [0375c9ad36ebc07b6ea074e78fbbe4bbf714b803](https://github.com/readium/readium-js-viewer/commit/0375c9ad36ebc07b6ea074e78fbbe4bbf714b803)
 
-...with a patch consisting of cherry-picked 3946d54c594b2a3a44564caa0478b64b375a9aaa
+...with a patch consisting of cherry-picked [317b926959a664759994831b6e20358a48109792](https://github.com/readium/readium-js/commit/317b926959a664759994831b6e20358a48109792)
 applied against sub-module `readium-js/`, in order to get bugfix for embedding external videos:
 
 ```bash
@@ -27,6 +27,8 @@ Date:   Wed Jan 27 21:44:56 2016 +0000
 
     version bump
 ```
+
+Note that the commit ID changes during the cherry-pick, and seems to be different when applied in different repo clones, perhaps because date/time of cherry-pick is taken into account.
 
 ## INSTALLATION
 
