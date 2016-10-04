@@ -23,7 +23,8 @@ define(
             'NAVBAR'                : '.navbar',
             'NAVBAR_RIGHT'          : '.navbar-right',
             'NAVBAR_BUTTONS'        : '.navbar .btn',
-            'READING_AREA'          : '#reading-area'
+            'READING_AREA'          : '#reading-area',
+            'SHARE_BOOKMARK_BUTTON' : '.icon-shareUrl',
         };
 
         Object.freeze( ReadiumCss.Classes );
