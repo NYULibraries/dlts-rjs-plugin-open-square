@@ -39,6 +39,7 @@ define(
             hideReadiumAboutButton();
             hideAudioButtonSooner();
             hideLibraryButton();
+            hideShareBookmarkButton();
 
             restyleNavbar();
             moveReadingAreaClearOfNavbar();
@@ -69,6 +70,12 @@ define(
             var $libraryButton = $( ReadiumCss.Selectors.LIBRARY_BUTTON );
 
             $libraryButton.css( { visibility : 'hidden' } );
+        }
+
+        function hideShareBookmarkButton() {
+            var $shareBookmarkButton = $( ReadiumCss.Selectors.SHARE_BOOKMARK_BUTTON );
+
+            $shareBookmarkButton.css( { visibility : 'hidden' } );
         }
 
         function restyleNavbar() {
