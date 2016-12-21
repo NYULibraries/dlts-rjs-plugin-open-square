@@ -98,6 +98,10 @@ define(
     width: 40px;
     height: 40px;
     /* box-shadow: 1px 1px 5px rgb(0, 0, 0);*/
+}
+
+#dlts-header {
+    background-color: #333333;
 }`;
 
             // Make banner appear and disappear like Readium UI.
