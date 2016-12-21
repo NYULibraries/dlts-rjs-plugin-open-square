@@ -2,8 +2,9 @@ define(
     [ 'readium_js_plugins',
       'jquery',
       './ReadiumCss',
+      './SiteBranding',
       './Util' ],
-    function ( Plugins, $, ReadiumCss, Util ) {
+    function ( Plugins, $, ReadiumCss, SiteBranding, Util ) {
 
         // WARNING: window.matchMedia() not supported on IE8 or lower
         var isTouchDevice    = Util.isTouchDevice(),
@@ -13,6 +14,7 @@ define(
             'dltsRjsPluginOaBooks',
             function ( api ) {
 
+                doReaderSiteBranding();
                 doCustomizations();
 
                 if ( isTouchDevice ) {
@@ -27,6 +29,11 @@ define(
                 );
             }
         );
+
+        function doReaderSiteBranding() {
+            SiteBranding.insertHeader();
+            SiteBranding.insertFooter();
+        }
 
         function doCustomizations() {
             // Note for element hiding customizations:
