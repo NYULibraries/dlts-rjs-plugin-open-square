@@ -108,7 +108,7 @@ define(
 }`;
 
             let html =
-`<div class="header">
+`<div id="dlts-header" class="header">
   <nav class="banner" role="navigation" id="banner-fixed-top">
     <div class="banner-inner">
       <div class="container">
