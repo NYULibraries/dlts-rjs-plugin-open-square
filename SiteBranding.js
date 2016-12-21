@@ -3,10 +3,23 @@
  */
 
 define(
-    ['jquery'], function ( $ ) {
+    ['jquery', './Util'], function ( $, Util ) {
 
         let SiteBranding = {};
-        let mainSiteUrl = 'http://openaccessbooks-local/';
+        let siteArg = Util.getURLQueryParams()[ 'site' ];
+
+        let mainSiteName;
+        let mainSiteUrl;
+        if ( siteArg === 'oabooks' ) {
+            mainSiteName = 'Open Access Books';
+            mainSiteUrl  = 'http://openaccessbooks-local/';
+        } else if ( siteArg === 'connected-youth' ) {
+            mainSiteName = 'Connected Youth';
+            mainSiteUrl  = 'http://connectedyouth-local/';
+        } else {
+            mainSiteName = `[ ERROR: invalid "site" param value: ${siteArg}`;
+            mainSiteUrl  = '';
+        }
 
         SiteBranding.insertHeader = () => {
             let headerStyles =
@@ -118,7 +131,7 @@ define(
       <div class="container">
         <header role="banner">
           <h2 id="logo-replace"><a href="${mainSiteUrl}" class="brand">NYU Press</a></h2>
-          <h1 id="site-title"><a href="${mainSiteUrl}">Open Access Books</a></h1>
+          <h1 id="site-title"><a href="${mainSiteUrl}">${mainSiteName}</a></h1>
           <div class="n-utils">
             <button id="search-toggle" style="display:none">X</button>
             <form role="search" class="pure-form searchform" value="" method="get" action="${mainSiteUrl}/search" name="searchform" >
