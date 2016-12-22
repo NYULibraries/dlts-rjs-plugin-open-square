@@ -6,7 +6,7 @@ define(
     ['jquery', './Util'], function ( $, Util ) {
 
         let SiteBranding = {};
-        let siteArg = Util.getURLQueryParams()[ 'site' ];
+        let siteArg = Util.getURLQueryParams()[ 'dlts-site' ];
 
         let mainSiteName;
         let mainSiteUrl;
