@@ -12,10 +12,10 @@ define(
         let mainSiteUrl;
         if ( siteArg === 'oabooks' ) {
             mainSiteName = 'Open Access Books';
-            mainSiteUrl  = 'http://openaccessbooks-local';
+            mainSiteUrl  = 'http://openaccessbooks-dev.nyupress.org/';
         } else if ( siteArg === 'connected-youth' ) {
             mainSiteName = 'Connected Youth';
-            mainSiteUrl  = 'http://connectedyouth-local';
+            mainSiteUrl  = 'http://openaccessbooks-dev.nyupress.org/';
         } else {
             mainSiteName = `[ ERROR: invalid "site" param value: ${siteArg}`;
             mainSiteUrl  = '';
