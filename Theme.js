@@ -10,7 +10,7 @@ define(
 
         let mainSiteName;
         let mainSiteUrl;
-        if ( siteArg === 'oabooks' ) {
+        if ( siteArg === 'oa-books' ) {
             mainSiteName = 'Open Access Books';
             mainSiteUrl  = 'http://openaccessbooks-dev.nyupress.org/';
         } else if ( siteArg === 'connected-youth' ) {
