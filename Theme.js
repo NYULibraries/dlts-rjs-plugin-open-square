@@ -125,6 +125,17 @@ define(
                 "    opacity:0;\n" +
                 "}\n";
 
+            var searchForm;
+            if ( siteArg === 'oa-books' ) {
+                searchForm =
+                    "          <div class=\"n-utils\">\n" +
+                    "            <button id=\"search-toggle\" style=\"display:none\">X</button>\n" +
+                    "            <form role=\"search\" class=\"pure-form searchform\" value=\"\" method=\"get\" action=\"" + mainSiteUrl + "/search\" name=\"searchform\" >\n" +
+                    "              <input class=\"searchbox pure-input\" name=\"searchbox\" id=\"searchbox\" type=\"text\" placeholder=\"Search for books...\" value=\"\" size=\"30\" maxlength=\"300\">\n" +
+                    "            </form>\n" +
+                    "          </div>\n";
+            }
+
             var html =
                 "<div id=\"dlts-header\" class=\"header banner\">\n" +
                 "  <nav class=\"banner\" role=\"navigation\" id=\"banner-fixed-top\">\n" +
@@ -133,12 +144,7 @@ define(
                 "        <header role=\"banner\">\n" +
                 "          <h2 id=\"logo-replace\"><a href=\"" + mainSiteUrl + "/\" class=\"brand\">NYU Press</a></h2>\n" +
                 "          <h1 id=\"site-title\"><a href=\"" + mainSiteUrl + "/\">" + mainSiteName + "</a></h1>\n" +
-                "          <div class=\"n-utils\">\n" +
-                "            <button id=\"search-toggle\" style=\"display:none\">X</button>\n" +
-                "            <form role=\"search\" class=\"pure-form searchform\" value=\"\" method=\"get\" action=\"" + mainSiteUrl + "/search\" name=\"searchform\" >\n" +
-                "              <input class=\"searchbox pure-input\" name=\"searchbox\" id=\"searchbox\" type=\"text\" placeholder=\"Search for books...\" value=\"\" size=\"30\" maxlength=\"300\">\n" +
-                "            </form>\n" +
-                "          </div>\n" +
+                searchForm +
                 "        </header>\n" +
                 "      </div>\n" +
                 "    </div>\n" +
