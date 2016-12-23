@@ -28,7 +28,7 @@ define(
                 "    height: 50px;\n" +
                 "    display: block;\n" +
                 "    text-indent: 300%;\n" +
-                "    background-image: url(\"../images/NYUPLogo.png\");\n" +
+                "    background-image: url(\"/images/NYUPLogo.png\");\n" +
                 "    background-repeat: no-repeat;\n" +
                 "    background-size: auto 100%;\n" +
                 "    white-space: nowrap;\n" +
