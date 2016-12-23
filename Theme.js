@@ -5,7 +5,7 @@
 define(
     ['jquery', './Util'], function ( $, Util ) {
 
-        let SiteBranding = {};
+        let Theme = {};
         let siteArg = Util.getURLQueryParams()[ 'dlts-site' ];
 
         let mainSiteName;
@@ -21,7 +21,7 @@ define(
             mainSiteUrl  = '';
         }
 
-        SiteBranding.insertHeader = () => {
+        Theme.insertHeader = () => {
             let headerStyles =
 `.banner #logo-replace a {
     width: 105px;
@@ -147,7 +147,7 @@ define(
             $( 'body' ).prepend( html );
         };
 
-        SiteBranding.insertFooter = () => {
+        Theme.insertFooter = () => {
             let footerStyles =
 `.footer-inner {
   padding: 5px 0 7px 0;
@@ -255,6 +255,6 @@ footer#pagefooter li a:hover {
             $( 'body' ).append( html );
         };
 
-        return SiteBranding;
+        return Theme;
     }
 );
