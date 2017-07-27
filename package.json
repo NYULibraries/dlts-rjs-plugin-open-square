@@ -1,0 +1,19 @@
+{
+  "name": "dlts-rjs-plugin-oa-books",
+  "version": "1.0.0",
+  "description": "NYU DLTS and NYU Press ReadiumJS viewer plugin",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NYULibraries/dlts-rjs-plugin-oa-books.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/NYULibraries/dlts-rjs-plugin-oa-books/issues"
+  },
+  "homepage": "https://github.com/NYULibraries/dlts-rjs-plugin-oa-books#readme"
+}
