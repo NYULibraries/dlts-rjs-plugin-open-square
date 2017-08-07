@@ -26,6 +26,31 @@ define(
             );
         };
 
+        // Copied from Readium Helpers module in readium-shared-js/js/helpers.js,
+        // with some code style changes.
+        // Haven't seen documentation stating that Helpers is meant for plugin
+        // writers to use, and in any case don't know how stable its API is.
+        // Safer to just copy it here.
+        Util.getURLQueryParams = function() {
+            var params = {},
+                query = window.location.search,
+                x,
+                keyParams, keyVal;
+
+            if ( query && query.length ) {
+                query = query.substring( 1 );
+                keyParams = query.split( '&' );
+                for ( x = 0; x < keyParams.length; x++ ) {
+                    keyVal = keyParams[ x ].split( '=' );
+                    if ( keyVal.length > 1 ) {
+                        params[ keyVal[ 0 ] ] = decodeURIComponent( keyVal[ 1 ] );
+                    }
+                }
+            }
+
+            return params;
+        };
+
         Object.freeze( Util );
 
         return Util;
