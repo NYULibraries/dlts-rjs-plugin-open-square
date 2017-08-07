@@ -232,7 +232,7 @@ define(
                 }
             );
 
-            $iframe[ 0 ].dispatchEvent( scrollToEvent );
+            $iframe[ 0 ].contentDocument.dispatchEvent( scrollToEvent );
         }
     }
 );
