@@ -51,6 +51,55 @@ define(
             return params;
         };
 
+        // Util.CustomEvent below is based on webmodules / custom-event v1.0.1:
+        https://raw.githubusercontent.com/webmodules/custom-event/725c41146f970df345d57cd97b2bf5acd6c8e9f7/index.js
+
+        var NativeCustomEvent = window.CustomEvent;
+
+        function useNative() {
+            try {
+                var p = new NativeCustomEvent( 'cat', { detail : { foo : 'bar' } } );
+                return 'cat' === p.type && 'bar' === p.detail.foo;
+            } catch ( e ) {
+            }
+            return false;
+        }
+
+        Util.CustomEvent = useNative() ? NativeCustomEvent :
+
+           (
+            // IE >= 9?
+            'undefined' !== typeof document && 'function' === typeof document.createEvent ?
+
+                function ( type, params ) {
+                    var e = document.createEvent( 'CustomEvent' );
+                    if ( params ) {
+                        e.initCustomEvent( type, params.bubbles, params.cancelable, params.detail );
+                    } else {
+                        e.initCustomEvent( type, false, false, void 0 );
+                    }
+                    return e;
+                }
+
+            // IE <= 8?
+            :
+
+                function ( type, params ) {
+                    var e = document.createEventObject();
+                    e.type = type;
+                    if ( params ) {
+                        e.bubbles    = Boolean( params.bubbles );
+                        e.cancelable = Boolean( params.cancelable );
+                        e.detail     = params.detail;
+                    } else {
+                        e.bubbles    = false;
+                        e.cancelable = false;
+                        e.detail     = void 0;
+                    }
+                    return e;
+                }
+           );
+
         Object.freeze( Util );
 
         return Util;

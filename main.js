@@ -23,6 +23,7 @@ define(
                     ReadiumSDK.Events.CONTENT_DOCUMENT_LOADED,
                     function ( $iframe, spineItem ) {
                         fixSplitImages( $iframe );
+                        navigateToPrintedPage( $iframe );
                     }
                 );
             }
@@ -198,6 +199,40 @@ define(
 
                 '</style>'
             );
+        }
+
+        function navigateToPrintedPage( $iframe ) {
+            var printedPageNumber = Util.getURLQueryParams().page,
+                pageElement,
+                pageRange,
+                scrollToEvent
+                ;
+
+            if ( ! printedPageNumber ) {
+                return;
+            }
+
+            pageElement = $iframe.contents().find( '#page_' + printedPageNumber )[ 0 ];
+
+            if ( ! pageElement ) {
+                console.log( 'navigateToPrintedPage ERROR: page ' + printedPageNumber + ' not found.' );
+
+                return;
+            }
+
+            pageRange = document.createRange();
+            pageRange.setStart( pageElement, 0 );
+            pageRange.setEnd( pageElement, 0 );
+
+            scrollToEvent = new Util.CustomEvent( 'scrolltorange',
+                {
+                    bubbles: true,
+                    cancelable: true,
+                    detail: pageRange
+                }
+            );
+
+            $iframe[ 0 ].dispatchEvent( scrollToEvent );
         }
     }
 );
