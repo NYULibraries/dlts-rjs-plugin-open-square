@@ -1,9 +1,10 @@
 define(
     [ 'readium_js_plugins',
       'jquery',
+      'keymaster',
       './ReadiumCss',
       './Util' ],
-    function ( Plugins, $, ReadiumCss, Util ) {
+    function ( Plugins, $, Keymaster, ReadiumCss, Util ) {
 
         // WARNING: window.matchMedia() not supported on IE8 or lower
         var isTouchDevice    = Util.isTouchDevice(),
@@ -43,6 +44,8 @@ define(
 
             restyleNavbar();
             moveReadingAreaClearOfNavbar();
+
+            enableToggleHideShowBookmarksButton();
         }
 
         function doMobileCustomizations() {
@@ -73,9 +76,23 @@ define(
         }
 
         function hideShareBookmarkButton() {
+            setShareBookmarkButtonVisibility( 'hidden' );
+        }
+
+        function showShareBookmarkButton() {
+            setShareBookmarkButtonVisibility( 'visible' );
+        }
+
+        function setShareBookmarkButtonVisibility( visibility) {
             var $shareBookmarkButton = $( ReadiumCss.Selectors.SHARE_BOOKMARK_BUTTON );
 
-            $shareBookmarkButton.css( { visibility : 'hidden' } );
+            $shareBookmarkButton.css( { visibility : visibility } );
+        }
+
+        function isShareBookmarkButtonHidden() {
+            var $shareBookmarkButton = $( ReadiumCss.Selectors.SHARE_BOOKMARK_BUTTON );
+
+            return $shareBookmarkButton.css( 'visibility' ) === 'hidden';
         }
 
         function restyleNavbar() {
@@ -139,6 +156,16 @@ define(
                     'top' : '78px'
                 }
             )
+        }
+
+        function enableToggleHideShowBookmarksButton() {
+            key( 'ctrl+alt+shift+s', function() {
+                if ( isShareBookmarkButtonHidden() ) {
+                    showShareBookmarkButton();
+                } else {
+                    hideShareBookmarkButton();
+                }
+            } );
         }
 
         function fixSplitImages( $iframe ) {
