@@ -169,29 +169,12 @@ define(
         }
 
         function fixSplitImages( $iframe ) {
-            fixSplitSvg( $iframe );
+            // Used to have a fixSplitSvg function to fix
+            // https://www.pivotaltracker.com/n/projects/1355218/stories/105150522
+            // ...but removed it to fix https://jira.nyu.edu/jira/browse/NYUP-470.
+            // The removed code is tagged:
+            // https://github.com/NYULibraries/dlts-rjs-plugin-open-square/releases/tag/archived_fix-split-svg-code
             fixSplitImg( $iframe );
-        }
-
-        // This prevents book covers that are <svg> from being split into two columns:
-        // https://www.pivotaltracker.com/n/projects/1355218/stories/105150522
-        function fixSplitSvg( $iframe ) {
-            setBookCoverSvgPositionToAbsolute( $iframe );
-        }
-
-        // Note that this only seems to fix split cover bug in OA Books collection,
-        // not for books in Connected Youth: https://jira.nyu.edu/browse/NYUP-132.
-        // Connected Youth books do not use SVG elements.
-        function setBookCoverSvgPositionToAbsolute( $iframe ) {
-            var iframeDocument = $iframe.contents()[ 0 ],
-                svgElement     = iframeDocument.querySelector( 'svg' ),
-                $svg           = $( svgElement );
-
-            $svg.css(
-                {
-                    'position' : 'absolute'
-                }
-            )
         }
 
         // This prevents images from being split into two columns:
