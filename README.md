@@ -1,5 +1,5 @@
-ReadiumJS plugin for [NYU Press Open Access Books (OA Books)](http://openaccessbooks.nyupress.org/)
-=============================================================
+ReadiumJS plugin for [NYU Press Open Square](http://opensquare.nyupress.org/)
+=============================================================================
 
 ## Required ReadiumJS Viewer version
 
@@ -37,10 +37,10 @@ Note that the commit ID changes during the cherry-pick, and seems to be differen
 ```Shell
 # In root of ReadiumJS viewer instance
 cd readium-js/readium-shared-js/plugins/
-git clone git@github.com:NYULibraries/dlts-rjs-plugin-oa-books.git dltsRjsPluginOaBooks
+git clone git@github.com:NYULibraries/dlts-rjs-plugin-open-square.git dltsRjsPluginOpenSquare
 ```
 
-Note that "dlts-rjs-plugin-oa-books" breaks the build, so plugin registration at
+Note that "dlts-rjs-plugin-open-square" breaks the build, so plugin registration at
 the moment uses camel-case convention.  There is an open issue for this:
 [
    plugins: name with dash / stroke char breaks build? · Issue #241 · readium/readium-shared-js
@@ -53,7 +53,7 @@ A basic example where this plugin is the only one enabled:
 ```
 plugins:
   include: [
-    'dltsRjsPluginOaBooks'
+    'dltsRjsPluginOpenSquare'
   ]
   exclude: [
   ]
